@@ -72,14 +72,13 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 
 ##  Technology Stack
 
-* **Frontend Framework**: React 19 (TypeScript)
-* **Build System**: Vite 6
+* **Frontend Framework**: React 19 + TypeScript
+* **Build Tool**: Vite 6.4.3
 * **Styling**: Tailwind CSS v4
-* **Animations**: Motion (Framer Motion v12)
-* **Icons**: Lucide React
-* **Test Suite**: Vitest
-* **Toast system**: Sonner Toast Notifications
-
+* **Animation Library**: Motion (Framer Motion)
+* **Icon Library**: Lucide React
+* **Test Framework**: Vitest
+* **Toast system**: Sonner
 
 ## Use Cases
 
