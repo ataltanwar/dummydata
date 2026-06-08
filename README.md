@@ -14,8 +14,6 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 
 https://dummmydata.vercel.app/
 
----
-
 ## Features
 
 ### Supported generators:
