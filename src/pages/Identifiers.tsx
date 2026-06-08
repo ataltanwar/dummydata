@@ -367,7 +367,7 @@ export default function Identifiers() {
       </div>
 
       {/* workbench */}
-      <div className="lg:col-span-8 bg-bg-surface border border-border-primary rounded-[20px] overflow-hidden shadow-theme-xs flex flex-col min-h-[500px] self-start">
+      <div className="lg:col-span-8 bg-bg-surface border border-border-primary rounded-[20px] overflow-hidden shadow-theme-xs flex flex-col min-h-125 self-start">
         
         {/* quick actions */}
         <div className="p-5 border-b border-border-primary flex flex-col lg:flex-row gap-4 justify-between items-center lg:items-center bg-bg-surface-accent-translucent">
