@@ -57,7 +57,7 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 
 | Identifier | Description | Format / Pattern | Example |
 | :--- | :--- | :--- | :--- |
-| **PAN** | Permanent Account Number (Individual/Company) | `AAAAA9999A` | `ABCDE1234F` |
+| **PAN** | Permanent Account Number (Individual) | `AAAAA9999A` | `ABCDE1234F` |
 | **TAN** | Tax Deduction Account Number | `AAAA99999A` | `DELR12345A` |
 | **GSTIN** | GST Identification Number | `[StateCode][PAN][EntityCode]Z[Checksum]` | `08ABCDE1234F1Z5` |
 | **CIN** | Corporate Identification Number | `[L/U][NIC][StateCode][Year][Class][RegNo]` | `U72900RJ2025PTC123456` |
