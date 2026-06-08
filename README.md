@@ -2,11 +2,9 @@
   <img
     src="https://raw.githubusercontent.com/ataltanwar/dummydata/cb1392c81a806cdc1a8b2a4e16c352cdb74ae4c1/public/Dummy%20Data%20Logo.svg"
     alt="Dummy Data Generator"
-    width="96"
+    width="150"
   />
 </p>
-
-<h1 align="center">Dummy Data Generator</h1>
 
 Generate format-valid, compliance and workforce identifiers for development, QA, testing, demos, and staging environments. This utility helps developers build and test registration forms, validation routines, and financial services apps with realistic testing data that passes format validation checks.
 
