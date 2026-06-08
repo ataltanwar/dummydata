@@ -8,11 +8,13 @@
 
 Generate format-valid, compliance and workforce identifiers for development, QA, testing, demos, and staging environments. This utility helps developers build and test registration forms, validation routines, and financial services apps with realistic testing data that passes format validation checks.
 
-![React](https://img.shields.io/badge/React-19-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Vite](https://img.shields.io/badge/Vite-7-purple)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-cyan)
-![License](https://img.shields.io/badge/License-MIT-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-blue" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-5-blue" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-6.4.3-purple" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-cyan" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+</p>
 
 ---
 
