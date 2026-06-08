@@ -8,10 +8,6 @@
 
 <h1 align="center">Dummy Data Generator</h1>
 
-<p align="center">
-  Generate format-valid Indian compliance and workforce identifiers for testing and development.
-</p>
-
 Generate format-valid, compliance and workforce identifiers for development, QA, testing, demos, and staging environments. This utility helps developers build and test registration forms, validation routines, and financial services apps with realistic testing data that passes format validation checks.
 
 ![React](https://img.shields.io/badge/React-19-blue)
