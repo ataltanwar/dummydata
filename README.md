@@ -38,7 +38,7 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 
 ### Modern User Experience
 
-* Responsive SaaS-inspired interface
+* Responsive SaaS-inspired design
 * Mobile, tablet, and desktop optimized
 * Dark and Light theme support
 * Real-time toast notifications
@@ -48,8 +48,8 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 
 * Fully client-side generation
 * No data storage or transmission
-* Synthetic testing data only
-* Built-in testing-use disclaimers and guidance
+* Synthetic testing data only.
+* Built-in testing-use disclaimers.
 
 ---
 
