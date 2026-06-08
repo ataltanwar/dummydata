@@ -15,7 +15,11 @@ Generate format-valid, compliance and workforce identifiers for development, QA,
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-1973FC?style=for-the-badge)](https://dummmydata.vercel.app/)
+<p align="center">
+  <a href="https://YOUR-VERCEL-URL.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo-Visit_Website-1973FC?style=for-the-badge" alt="Live Demo" />
+  </a>
+</p>
 ---
 
 ## Features
