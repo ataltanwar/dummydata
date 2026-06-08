@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/ataltanwar/dummydata/refs/heads/main/public/favicon.ico"
+    src="https://raw.githubusercontent.com/ataltanwar/dummydata/cb1392c81a806cdc1a8b2a4e16c352cdb74ae4c1/public/Dummy%20Data%20Logo.svg"
     alt="Dummy Data Generator"
     width="96"
   />
