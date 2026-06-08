@@ -1,4 +1,4 @@
-# DummyData 
+# Dummy Data Generator
 
 
 Generate format-valid, compliance and workforce identifiers for development, QA, testing, demos, and staging environments. This utility helps developers build and test registration forms, validation routines, and financial services apps with realistic testing data that passes format validation checks.
