@@ -1,0 +1,6 @@
+{
+  "name": "DummyData",
+  "description": "A lightweight utility web application that generates format-valid, realistic workforce resources, company datasets, and compliant Indian identifiers for rapid testing and development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
