@@ -221,50 +221,88 @@ export function generateEmployeeIDValue(prefix: string = 'EMP', serial: number =
   return `${prefix}-${serialStr}`;
 }
 
+export interface FormattedIdentifier {
+  displayValue: string;
+  rawValue: string;
+}
+
 export interface GenerationConfig {
   bankCode?: string;
   bankDigits?: number;
 }
 
 // Bulk identifier generator helper
-export function generateIdentifiers(type: IdentifierType, count: number, config: GenerationConfig = {}): string[] {
+export function generateIdentifiers(type: IdentifierType, count: number, config: GenerationConfig = {}): FormattedIdentifier[] {
   const { bankCode, bankDigits = 12 } = config;
-  const results: string[] = [];
+  const results: FormattedIdentifier[] = [];
   for (let i = 0; i < count; i++) {
+    let raw = '';
+    let display = '';
+
     switch (type) {
-      case 'PAN':
-        results.push(generatePANValue('P'));
+      case 'PAN': {
+        const val = generatePANValue('P');
+        raw = val;
+        display = val;
         break;
-      case 'TAN':
-        results.push(generateTANValue());
+      }
+      case 'TAN': {
+        const val = generateTANValue();
+        raw = val;
+        display = val;
         break;
-      case 'GSTIN':
-        results.push(generateGSTINValue());
+      }
+      case 'GSTIN': {
+        const val = generateGSTINValue();
+        raw = val;
+        display = val;
         break;
-      case 'CIN':
-        results.push(generateCINValue());
+      }
+      case 'CIN': {
+        const val = generateCINValue();
+        raw = val;
+        display = val;
         break;
-      case 'AADHAAR':
-        results.push(formatAadhaar(generateAadhaarValue()));
+      }
+      case 'AADHAAR': {
+        raw = generateAadhaarValue();
+        display = formatAadhaar(raw);
         break;
-      case 'ESIC':
-        results.push(generateESICValue());
+      }
+      case 'ESIC': {
+        display = generateESICValue();
+        raw = display.replace(/-/g, '');
         break;
-      case 'UAN':
-        results.push(generateUANValue());
+      }
+      case 'UAN': {
+        const val = generateUANValue();
+        raw = val.replace(/[\s-]/g, '');
+        display = val;
         break;
-      case 'BANK_ACCOUNT':
-        results.push(generateBankAccountValue(bankDigits));
+      }
+      case 'BANK_ACCOUNT': {
+        const val = generateBankAccountValue(bankDigits);
+        raw = val.replace(/[\s-]/g, '');
+        display = val;
         break;
-      case 'IFSC':
-        results.push(generateIFSCValue(bankCode));
+      }
+      case 'IFSC': {
+        const val = generateIFSCValue(bankCode);
+        raw = val.replace(/[\s-]/g, '');
+        display = val;
         break;
-      case 'EMPLOYEE_ID':
-        results.push(generateEmployeeIDValue('EMP', i + 1));
+      }
+      case 'EMPLOYEE_ID': {
+        const val = generateEmployeeIDValue('EMP', i + 1);
+        raw = val;
+        display = val;
         break;
+      }
       default:
-        results.push('');
+        raw = '';
+        display = '';
     }
+    results.push({ displayValue: display, rawValue: raw });
   }
   return results;
 }

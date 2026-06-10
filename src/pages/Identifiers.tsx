@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { generateIdentifiers, identifierConfigs, IdentifierType } from '../generators/workforce';
+import { generateIdentifiers, identifierConfigs, IdentifierType, FormattedIdentifier } from '../generators/workforce';
 import CopyButton from '../components/CopyButton';
 import { downloadFile } from '../utils/csvExport';
 import { useToast } from '../components/Toast';
@@ -29,7 +29,7 @@ const popularBanks = [
 export default function Identifiers() {
   const [selectedType, setSelectedType] = useState<IdentifierType>('PAN');
   const [quantity, setQuantity] = useState<number>(10);
-  const [generatedList, setGeneratedList] = useState<string[]>([]);
+  const [generatedList, setGeneratedList] = useState<FormattedIdentifier[]>([]);
   const [isCopiedAll, setIsCopiedAll] = useState(false);
   const [isRulesOpen, setIsRulesOpen] = useState(false);
   const [srMessage, setSrMessage] = useState<string>('');
@@ -79,7 +79,7 @@ export default function Identifiers() {
   const handleCopyAll = async () => {
     if (generatedList.length === 0) return;
     try {
-      const bulkString = generatedList.join('\n');
+      const bulkString = generatedList.map(item => item.rawValue).join('\n');
       await navigator.clipboard.writeText(bulkString);
       setIsCopiedAll(true);
       if (copyTimeoutRef.current) {
@@ -97,7 +97,7 @@ export default function Identifiers() {
   const handleDownloadCSV = () => {
     if (generatedList.length === 0) return;
     const header = identifierConfigs[selectedType].label;
-    const csvContent = `${header}\n${generatedList.join('\n')}`;
+    const csvContent = `${header}\n${generatedList.map(item => item.rawValue).join('\n')}`;
     const filename = `dummy_${selectedType.toLowerCase()}_list.csv`;
     downloadFile(csvContent, filename, 'text/csv');
     success(`Exported CSV successfully!`);
@@ -436,7 +436,7 @@ export default function Identifiers() {
                     </span>
                     <span className="font-mono text-xs sm:text-sm font-semibold text-text-primary tracking-wider select-all">
                       <span className="sr-only">Value {index + 1}: </span>
-                      {item}
+                      {item.displayValue}
                     </span>
                   </div>
 
@@ -444,7 +444,7 @@ export default function Identifiers() {
                     <span className="text-[10px] text-text-slate-500 font-mono hidden xl:inline">
                       Quick Copy
                     </span>
-                    <CopyButton value={item} label={`${currentConfig.label} ${index + 1} (${item})`} />
+                    <CopyButton value={item.rawValue} label={`${currentConfig.label} ${index + 1} (${item.displayValue})`} />
                   </div>
                 </li>
               ))}

@@ -60,7 +60,8 @@ describe('Workforce Compliance Generators', () => {
       const list = generateIdentifiers('PAN', 5);
       expect(list).toHaveLength(5);
       list.forEach(item => {
-        expect(/^[A-Z]{5}\d{4}[A-Z]$/.test(item)).toBe(true);
+        expect(/^[A-Z]{5}\d{4}[A-Z]$/.test(item.displayValue)).toBe(true);
+        expect(/^[A-Z]{5}\d{4}[A-Z]$/.test(item.rawValue)).toBe(true);
       });
     });
 
@@ -68,8 +69,28 @@ describe('Workforce Compliance Generators', () => {
       const bankAccounts = generateIdentifiers('BANK_ACCOUNT', 3, { bankDigits: 10 });
       expect(bankAccounts).toHaveLength(3);
       bankAccounts.forEach(acc => {
-        expect(acc).toHaveLength(10);
-        expect(/^\d{10}$/.test(acc)).toBe(true);
+        expect(acc.displayValue).toHaveLength(10);
+        expect(/^\d{10}$/.test(acc.displayValue)).toBe(true);
+        expect(acc.rawValue).toHaveLength(10);
+        expect(/^\d{10}$/.test(acc.rawValue)).toBe(true);
+      });
+    });
+
+    it('should separate displayValue and rawValue for Aadhaar', () => {
+      const list = generateIdentifiers('AADHAAR', 3);
+      list.forEach(item => {
+        expect(item.displayValue).toMatch(/^\d{4} \d{4} \d{4}$/);
+        expect(item.rawValue).toMatch(/^\d{12}$/);
+        expect(item.rawValue).toBe(item.displayValue.replace(/ /g, ''));
+      });
+    });
+
+    it('should separate displayValue and rawValue for ESIC', () => {
+      const list = generateIdentifiers('ESIC', 3);
+      list.forEach(item => {
+        expect(item.displayValue).toMatch(/^\d{2}-\d{2}-\d{6}-\d{3}-\d{4}$/);
+        expect(item.rawValue).toMatch(/^\d{17}$/);
+        expect(item.rawValue).toBe(item.displayValue.replace(/-/g, ''));
       });
     });
   });
